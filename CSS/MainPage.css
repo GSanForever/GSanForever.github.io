@@ -1,0 +1,146 @@
+[v-cloak] {
+    display: none;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image:url("../Image/FGO.jpg");
+    background-repeat: repeat;
+}
+
+.Title_MouseOver, .Title_MouseOut{
+    height: 50px;
+    text-align: center;
+    font-family: monospace;
+    margin: 0 auto;
+    transition: all 0.6s ease;
+}
+
+.Title_MouseOver{
+    width: 80%;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: rgb(19, 69, 206);
+    border: 10px rgb(240, 226, 98) double;
+}
+
+.Title_MouseOut{
+    width: 95%;
+    font-size: 30px;
+    color: #0004fc;
+    background-color: rgb(37, 216, 177);
+    border: 5px rgb(240, 51, 51) solid;
+}
+
+#Content{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 100px;    
+}
+
+#LeftTagZone{
+    height: 400px;
+    width: 200px;
+    float: left;
+    left: 5px;
+    position: relative;
+}
+
+.LeftTagZone_Tag_Mouse_Out, 
+.LeftTagZone_Tag_Mouse_Over,
+.LeftTagZone_Tag_Mouse_Out_Clicked,
+.LeftTagZone_Tag_Mouse_Over_Clicked,
+.LeftTagZone_Tag_Mouse_Clicked{
+    -webkit-appearance:button;
+    font-style: oblique;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.LeftTagZone_Tag_Mouse_Out, 
+.LeftTagZone_Tag_Mouse_Over,
+.LeftTagZone_Tag_Mouse_Out_Clicked,
+.LeftTagZone_Tag_Mouse_Over_Clicked{
+    transition: all 0.5s ease-in-out;
+}
+
+.LeftTagZone_Tag_Mouse_Out{
+    height: 30px;
+    width: 150px;
+    border: 5px blue solid;
+    color: black;
+    font-size: 5px;
+}
+
+.LeftTagZone_Tag_Mouse_Over{
+    height: 50px;
+    width: 200px;
+    border: 10px yellowgreen solid;
+    color: red;
+    font-size: 10px;
+}
+
+.LeftTagZone_Tag_Mouse_Clicked{
+    height: 80px;
+    width: 230px;
+    border: 12px rgb(182, 28, 136) double;
+    color: rgb(121, 163, 5);
+    font-size: 12px;
+}
+
+.LeftTagZone_Tag_Mouse_Out_Clicked{
+    height: 80px;
+    width: 180px;
+    border: 8px rgb(182, 28, 136) double;
+    color: rgb(121, 163, 5);
+    font-size: 7px;
+}
+
+.LeftTagZone_Tag_Mouse_Over_Clicked{
+    height: 80px;
+    width: 230px;
+    border: 12px rgb(182, 28, 136) double;
+    color: rgb(121, 163, 5);
+    font-size: 12px;
+}
+
+.ContentAreaDIV{
+    height: auto;
+    width: 700px;
+    float: left;
+    left: 50px;
+    position: relative;
+}
+
+.ContentArea_TitleLabel{
+    font-family: initial;
+    font-style: oblique;
+    font-size: 50px;
+    font-weight: 900;
+    color: #0004fc;
+    text-align: center;
+    margin: 0px;
+}
+
+.ContentArea{
+    height: 500px;
+    width: 100%;
+    font-size: 25px;
+    color: white;
+    background: black;
+}
+
+.ContentArea-enter, .ContentArea-leave-to{
+    width: 100%;
+    height: 0px;
+}
+
+.ContentArea-enter-active, .ContentArea-leave-active{
+    transition: all 0.5s ease-in-out;
+}

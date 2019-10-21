@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="./CSS/MainPage.css"/>
+    <link rel="stylesheet" type="text/css" href="./CSS/animate.css"/>
+
+    <!-- 本地数据Json文件 -->
+    <script type="text/javascript" src="./JS/HTML_Json.js"></script>
+    <script type="text/javascript" src="./JS/JavaScript_Json.js"></script>
+    <script type="text/javascript" src="./JS/Vue_Json.js"></script>
+
+    <!-- 程序文件 -->
+    <script type="text/javascript" src="./JS/vue-2_6_1.js"></script>
+    <script type="text/javascript" src="./JS/MainPage.js"></script>
+</head>
+
+<body>
+
+    <!-- <a href="">测试1</a>
+    <a href="#last">测试2</a> -->
+
+    <!--标题部分-->
+    <div v-cloak id="Title" :class="titleStyle" @mouseover="MouseOverTitle" @mouseout="MouseOutTitle">
+        {{title}}
+    </div>
+
+    <div id="Content">
+        <div id="LeftTagZone">
+            <input type="button" 
+                v-for=" (tagText,index) in TagTexts " 
+                :value="tagText" 
+                :key="index" 
+                :class="LeftTag[index]" 
+                @mouseover="MouseOverTag(index)" 
+                @mouseout="MouseOutTag(index)" 
+                @click="ClickedTag(index)"
+                />
+            <input type="button" :value="ReturnButtonText" @click="Return">
+        </div>
+        
+        <div v-cloak id="ContentArea" :class="ContentAreaDivStyle">
+            <h1 :class="TitleLabelStyle"> {{TitleLabelText}} </h1>
+            <transition name="ContentArea" appear>
+                <textarea :class="ContentAreaStyle" v-if="IfShowContentArea"> {{Content}} </textarea>
+            </transition>
+        </div>
+
+        <!-- <div>
+            1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div>
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div>
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div>
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div>
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div>
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div>
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        <div id="last">
+                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div> -->
+    </div>                                
+
+</body>
