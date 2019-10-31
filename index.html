@@ -6,26 +6,42 @@
     <link rel="stylesheet" type="text/css" href="./CSS/animate.css"/>
 
     <!-- 本地数据Json文件 -->
-    <script type="text/javascript" src="./JS/HTML_Json.js"></script>
-    <script type="text/javascript" src="./JS/JavaScript_Json.js"></script>
-    <script type="text/javascript" src="./JS/Vue_Json.js"></script>
+    <script type="text/javascript" src="./JS/Data/HTML_Json.js"></script>
+    <script type="text/javascript" src="./JS/Data/JavaScript_Json.js"></script>
+    <script type="text/javascript" src="./JS/Data/Vue_Json.js"></script>
 
     <!-- 程序文件 -->
-    <script type="text/javascript" src="./JS/vue-2_6_1.js"></script>
-    <script type="text/javascript" src="./JS/MainPage.js"></script>
+    <script type="text/javascript" src="./JS/Vue/vue-2_6_1.js"></script>
+    <script type="text/javascript" src="./JS/Vue/vue-router.js"></script>
+
 </head>
 
 <body>
+    <div id="TitleZone" ref="titleZone">
+        <!-- 标题部分 -->
+        </br>
+        </br>
+        <div v-cloak id="TitleBox" 
+            :class="titleStyle" 
+            @mouseover.stop.prevent="MouseOverTitle" 
+            @mousemove.stop.prevent="MouseMoveTitle" 
+            @mouseout.stop.prevent="MouseOutTitle"
+            ref="titleBox"
+            >
+            <div id="TitleContent" ref="titleContent">{{title}}</div>
+        </div>
 
-    <!-- <a href="">测试1</a>
-    <a href="#last">测试2</a> -->
+        <!-- <ul style="position: relative;">
+            <li>aaa</li>
+            <li>aaa</li>
+            <li>aaa</li>
+        </ul> -->
 
-    <!--标题部分-->
-    <div v-cloak id="Title" :class="titleStyle" @mouseover="MouseOverTitle" @mouseout="MouseOutTitle">
-        {{title}}
+        <!-- 实现四个tag：主页，学习笔记，灌水，返回上级 -->
+
     </div>
 
-    <div id="Content">
+    <main id="ContentZone" ref="contentZone">
         <div id="LeftTagZone">
             <input type="button" 
                 v-for=" (tagText,index) in TagTexts " 
@@ -45,31 +61,14 @@
                 <textarea :class="ContentAreaStyle" v-if="IfShowContentArea"> {{Content}} </textarea>
             </transition>
         </div>
+    </main>           
 
-        <!-- <div>
-            1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div>
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div>
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div>
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div>
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div>
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div>
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div>
-        <div id="last">
-                1<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        </div> -->
-    </div>                                
+    <footer v-cloak id="BottomZone" ref="bottomZone">
+        <p> {{authorInfo}} </p>
+        <div id="BottomZone-Line"></div>
+    </footer>
+
+    <!-- js 代码 -->
+    <script type="text/javascript" src="./JS/MainPage.js"></script>
 
 </body>

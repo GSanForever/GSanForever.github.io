@@ -1,0 +1,172 @@
+
+[v-cloak] {
+    display: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+
+}
+
+//********** Head Part **********
+#TitleZone{
+    width: 100%;
+    height: 160px;
+    background-image:url("../Image/FGO.jpg");
+    background-repeat: repeat;
+    clip-path: margin-box;
+}
+
+.TitleMouseBaseSytle {
+    width: 400px;
+    height: 60px;
+    margin-left: 30px;
+    border: 5px rgb(121, 204, 224) outset;
+    transition: all 0.6s ease;
+}
+
+.Title_MouseOver {
+    color: #74a5e6;
+    background-color: rgb(101, 123, 124);
+    @extend .TitleMouseBaseSytle;
+}
+
+.Title_MouseOut{
+    color: #7f72c9;
+    background-color: rgb(209, 207, 197);
+    @extend .TitleMouseBaseSytle;
+}
+
+#TitleContent{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    position: absolute;
+}
+
+//********** Main Part **********
+
+//********** MainPart LeftTagZone **********
+
+#LeftTagZone{
+    height: 400px;
+    width: 200px;
+    float: left;
+    Top: 30px;
+    left: 5px;
+    position: relative;
+}
+
+.LeftTagZone_Tag_Base{
+    -webkit-appearance:button;
+    font-style: oblique;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+$mouseAnimTime :  all 0.5s ease-in-out;
+
+.LeftTagZone_Tag_Mouse_Out{
+    @extend .LeftTagZone_Tag_Base;
+    height: 30px;
+    width: 150px;
+    border: 5px blue solid;
+    color: black;
+    font-size: 5px;
+    transition: $mouseAnimTime;
+}
+
+.LeftTagZone_Tag_Mouse_Over{
+    @extend .LeftTagZone_Tag_Base;
+    height: 50px;
+    width: 200px;
+    border: 10px yellowgreen solid;
+    color: red;
+    font-size: 10px;
+    transition: $mouseAnimTime;
+}
+
+.LeftTagZone_Tag_Mouse_Out_Clicked{
+    @extend .LeftTagZone_Tag_Base;
+    height: 80px;
+    width: 180px;
+    border: 8px rgb(182, 28, 136) double;
+    color: rgb(121, 163, 5);
+    font-size: 7px;
+    transition: $mouseAnimTime;
+}
+
+.LeftTagZone_Tag_Mouse_Over_Clicked{
+    @extend .LeftTagZone_Tag_Base;
+    height: 80px;
+    width: 230px;
+    border: 12px rgb(182, 28, 136) double;
+    color: rgb(121, 163, 5);
+    font-size: 12px;
+    transition: $mouseAnimTime;
+}
+
+.LeftTagZone_Tag_Mouse_Clicked{
+    @extend .LeftTagZone_Tag_Base;
+    height: 80px;
+    width: 230px;
+    border: 12px rgb(182, 28, 136) double;
+    color: rgb(121, 163, 5);
+    font-size: 12px;
+}
+
+.ContentAreaDIV{
+    height: auto;
+    width: 700px;
+    float: left;
+    left: 50px;
+    position: relative;
+}
+
+.ContentArea_TitleLabel{
+    font-family: initial;
+    font-style: oblique;
+    font-size: 50px;
+    font-weight: 900;
+    color: #0004fc;
+    text-align: center;
+    margin: 0px;
+}
+
+.ContentArea{
+    height: 900px;
+    width: 100%;
+    font-size: 25px;
+    color: white;
+    background: black;
+}
+
+.ContentArea-enter, .ContentArea-leave-to{
+    width: 100%;
+    height: 0px;
+}
+
+.ContentArea-enter-active, .ContentArea-leave-active{
+    transition: all 0.5s ease-in-out;
+}
+
+//********** Bottom Zone **********
+
+#BottomZone{
+    background: rgb(102, 174, 233);
+    p{
+        text-align: right;
+        font-size: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: italic; 
+    };
+    div{
+        border: 4px blue double;
+    };
+    clear: both;    // 一定要清掉前面的布局另起一行
+} 
